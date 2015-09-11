@@ -1,0 +1,25 @@
+<html ng-app="8p">
+<head>
+	<title>8 puzzle</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+<body ng-controller="MainController as vm">
+	
+	<table>
+		<tbody>
+			<tr ng-repeat="row in vm.rows">
+				<td ng-repeat="cell in row.cells" class="token" ng-click="vm.move(cell)">
+					<span ng-bind="cell.value" class="token-value"></span>
+					<span ng-bind="cell.name" class="token-name"></span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<label for="log">Log:<label>
+	<textarea ng-model="vm.log" class="log" id="log"></textarea>
+	
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
